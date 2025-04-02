@@ -6,6 +6,7 @@ class Solution {
             res += x;
             answer[i] =res;
         }
+        //
         return answer;
     }
 }
