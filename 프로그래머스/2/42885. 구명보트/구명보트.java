@@ -1,23 +1,22 @@
 import java.util.*;
+
 class Solution {
     public int solution(int[] people, int limit) {
-        int answer = 0;
         Arrays.sort(people);
-        List<Integer> nList = new ArrayList<>();
-        for(int n : people){
-            nList.add(n);
-        }
         int left = 0;
-        int right = nList.size() - 1;
-        int cnt = 0;
-        while(left <= right){
-            if(nList.get(left) + nList.get(right) <= limit){
+        int right = people.length - 1;
+        int answer = 0;
+
+        while (left <= right) {
+            if (people[left] + people[right] <= limit) {
                 left++;
+                right--;
+            } else {
+                right--;
             }
-            right--;
             answer++;
         }
-       
+
         return answer;
     }
 }
