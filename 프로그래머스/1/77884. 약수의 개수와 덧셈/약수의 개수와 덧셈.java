@@ -13,19 +13,25 @@ class Solution {
                     cnt++;
                 }
             }
-            copyLeft++;
-            nList.add(cnt+1);
-        }
-        int idx = 0;
-        for(int m = left ; m <= right ; m++){
-            if(nList.get(idx) % 2 == 0){
-                answer += m;
-                idx++;
+            if(cnt % 2 == 0){
+             answer += copyLeft * -1;   
             }else{
-                answer -= m;
-                idx++;
+                answer -= copyLeft * -1;
             }
+            copyLeft++;
+            // nList.add(cnt+1);
+            
         }
+        // int idx = 0;
+        // for(int m = left ; m <= right ; m++){
+        //     if(nList.get(idx) % 2 == 0){
+        //         answer += m;
+        //         idx++;
+        //     }else{
+        //         answer -= m;
+        //         idx++;
+        //     }
+        // }
         return answer;
     }
 }
